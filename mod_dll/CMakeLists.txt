@@ -28,3 +28,6 @@ if(WIN32 OR MINGW)
         set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--kill-at")
     endif()
 endif()
+
+# Remove the 'lib' prefix added by MinGW
+set_target_properties(TSW6_Dispatcher PROPERTIES PREFIX "")
