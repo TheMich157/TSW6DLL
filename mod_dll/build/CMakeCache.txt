@@ -27,8 +27,10 @@ CMAKE_BUILD_TYPE:STRING=
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
-//CXX compiler
-CMAKE_CXX_COMPILER:STRING=/opt/homebrew/bin/x86_64-w64-mingw32-g++
+//Full path to the compiler used for language <LANG>. Set by CMake
+// during compiler detection on the first configure; users may
+// override on the command line to select a specific toolchain.
+CMAKE_CXX_COMPILER:UNINITIALIZED=x86_64-w64-mingw32-g++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -56,8 +58,10 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 //Libraries linked by default with all C++ applications.
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
-//C compiler
-CMAKE_C_COMPILER:STRING=/opt/homebrew/bin/x86_64-w64-mingw32-gcc
+//Full path to the compiler used for language <LANG>. Set by CMake
+// during compiler detection on the first configure; users may
+// override on the command line to select a specific toolchain.
+CMAKE_C_COMPILER:UNINITIALIZED=x86_64-w64-mingw32-gcc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler

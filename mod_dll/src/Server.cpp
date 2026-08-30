@@ -119,6 +119,14 @@ void Server::SetupRoutes() {
         uintptr_t address = 0;
         try {
             address = std::stoull(addrStr, nullptr, 16); // Parse as hex
+            
+#ifdef _WIN32
+            // If it's an offset from the base game module, add the base address
+            if (req.has_param("isOffset") && req.get_param_value("isOffset") == "true") {
+                HMODULE hModule = GetModuleHandleA(NULL); // Gets the base address of the exe we are injected into
+                address += reinterpret_cast<uintptr_t>(hModule);
+            }
+#endif
         } catch (...) {
             res.status = 400;
             res.set_content(R"({"error":"Invalid address format"})", "application/json");
@@ -152,7 +160,20 @@ void Server::SetupRoutes() {
             std::string addrStr = body["address"];
             std::string typeStr = body["type"];
             
+            bool isOffset = false;
+            if (body.contains("isOffset") && body["isOffset"].is_boolean()) {
+                isOffset = body["isOffset"].get<bool>();
+            }
+            
             uintptr_t address = std::stoull(addrStr, nullptr, 16);
+            
+#ifdef _WIN32
+            if (isOffset) {
+                HMODULE hModule = GetModuleHandleA(NULL);
+                address += reinterpret_cast<uintptr_t>(hModule);
+            }
+#endif
+            
             bool success = false;
 
             if (typeStr == "int") {

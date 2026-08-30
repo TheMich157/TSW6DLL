@@ -21,92 +21,101 @@ const PORT = process.env.PORT || 3001;
 const TSW_API_URL = process.env.TSW_API_URL || 'http://localhost:31270';
 const TSW_API_KEY = process.env.TSW_API_KEY || 'dummy-key';
 
-let gameState = {
-  signals: [],
-  trains: [],
-  mapInfo: {}
-};
+let trackedAddresses = [];
 
-// Simulate pulling data from TSW HTTP API
+// Simulate pulling data from TSW HTTP API or DLL
 async function pollTswApi() {
-  try {
-    // In a real scenario:
-    // const response = await axios.get(`${TSW_API_URL}/api/state`, { headers: { 'DTGCommKey': TSW_API_KEY } });
-    // gameState = response.data;
-    
-    // For now we mock the data since TSW API might not be running or reachable
-    gameState = {
-      signals: [
-        { id: 'sig_1', name: 'Signal A', state: 'Proceed', x: 100, y: 150, supportedStates: ['Proceed', 'Danger', 'Warning'] },
-        { id: 'sig_2', name: 'Signal B', state: 'Danger', x: 300, y: 150, supportedStates: ['Proceed', 'Danger'] },
-        { id: 'sig_3', name: 'Signal C', state: 'Warning', x: 500, y: 150, supportedStates: ['Proceed', 'Danger', 'Warning'] },
-      ],
-      trains: [
-        { id: 'train_1', name: 'ICE 3', speed: 120, x: 200, y: 150, direction: 'east' },
-        { id: 'train_2', name: 'RE 14', speed: 0, x: 400, y: 150, direction: 'west' }
-      ],
-      mapInfo: {
-        routeId: 'Route_Example',
-        routeName: 'Example Network'
-      }
-    };
+  if (trackedAddresses.length === 0) return;
 
-    io.emit('gameStateUpdate', gameState);
+  try {
+    const updatedValues = [];
+    
+    // Poll the DLL for each tracked address
+    for (let item of trackedAddresses) {
+      try {
+        const response = await axios.get(`${TSW_API_URL}/api/read`, {
+          params: {
+            address: item.offset,
+            type: item.type,
+            isOffset: true
+          },
+          timeout: 1000 // Don't hang forever
+        });
+        
+        updatedValues.push({
+          id: item.id,
+          name: item.name,
+          offset: item.offset,
+          type: item.type,
+          value: response.data.value,
+          status: 'ok'
+        });
+      } catch (err) {
+        updatedValues.push({
+          ...item,
+          value: null,
+          status: 'error'
+        });
+      }
+    }
+    
+    io.emit('memoryUpdate', updatedValues);
   } catch (error) {
-    console.error('Error fetching from TSW API:', error.message);
+    console.error('Error in polling loop:', error.message);
   }
 }
 
-// Poll every 2 seconds
-setInterval(pollTswApi, 2000);
+// Poll every 1 second for responsiveness
+setInterval(pollTswApi, 1000);
 
-// API endpoint to override a signal state
-app.post('/api/signals/:id/override', async (req, res) => {
-  const signalId = req.params.id;
-  const { newState } = req.body;
-
-  if (!newState) {
-    return res.status(400).json({ error: 'newState is required' });
+// Add a new memory address to track
+app.post('/api/track', (req, res) => {
+  const { name, offset, type } = req.body;
+  if (!name || !offset || !type) {
+    return res.status(400).json({ error: 'name, offset, and type are required' });
   }
 
-  console.log(`Received command to override signal ${signalId} to state ${newState}`);
+  const newItem = {
+    id: `mem_${Date.now()}`,
+    name,
+    offset,
+    type,
+    value: null,
+    status: 'pending'
+  };
 
-  try {
-    // In a real scenario, forward to TSW API if it supports POST/PUT:
-    // await axios.post(`${TSW_API_URL}/api/signals/${signalId}`, { state: newState }, { headers: { 'DTGCommKey': TSW_API_KEY } });
-    
-    // Fallback/Mock logic:
-    const signalIndex = gameState.signals.findIndex(s => s.id === signalId);
-    if (signalIndex !== -1) {
-      if (gameState.signals[signalIndex].supportedStates.includes(newState)) {
-        gameState.signals[signalIndex].state = newState;
-        // Broadcast immediately for responsiveness
-        io.emit('gameStateUpdate', gameState);
-        res.json({ success: true, message: `Signal ${signalId} overridden to ${newState}` });
-      } else {
-        res.status(400).json({ error: `State ${newState} not supported by signal ${signalId}` });
-      }
-    } else {
-      res.status(404).json({ error: 'Signal not found' });
-    }
-  } catch (error) {
-    console.error('Error overriding signal:', error.message);
-    res.status(500).json({ error: 'Failed to override signal in TSW API' });
-  }
+  trackedAddresses.push(newItem);
+  res.json({ success: true, item: newItem });
 });
 
-// API endpoint to create a line for a given train
-app.post('/api/trains/:id/route', async (req, res) => {
-  const trainId = req.params.id;
-  const { targetSignalId, pathSegments } = req.body;
+// Remove a memory address
+app.delete('/api/track/:id', (req, res) => {
+  trackedAddresses = trackedAddresses.filter(i => i.id !== req.params.id);
+  res.json({ success: true });
+});
 
-  console.log(`Received command to route train ${trainId} to ${targetSignalId}`);
+// Write to a memory address
+app.post('/api/write', async (req, res) => {
+  const { offset, type, value } = req.body;
+  if (!offset || !type || value === undefined) {
+    return res.status(400).json({ error: 'offset, type, and value are required' });
+  }
 
   try {
-    // In a real scenario, this might set switches/points via API
-    res.json({ success: true, message: `Route allocated for train ${trainId}` });
+    const response = await axios.post(`${TSW_API_URL}/api/write`, {
+      address: offset,
+      type: type,
+      value: value,
+      isOffset: true
+    });
+    
+    if (response.data.success) {
+      res.json({ success: true });
+    } else {
+      res.status(500).json({ error: 'DLL failed to write memory' });
+    }
   } catch (error) {
-    res.status(500).json({ error: 'Failed to set route' });
+    res.status(500).json({ error: 'Failed to communicate with DLL' });
   }
 });
 
