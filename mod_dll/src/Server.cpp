@@ -18,13 +18,15 @@ template <typename T>
 T ReadMemory(uintptr_t address) {
     T value = 0;
 #ifdef _WIN32
-    // Basic unsafe read for demonstration. In a real mod, you'd want IsBadReadPtr checks 
-    // or to use ReadProcessMemory if doing it externally. Internally, a direct dereference works 
-    // but can crash the game if the address is invalid.
-    __try {
-        value = *reinterpret_cast<T*>(address);
-    } __except (EXCEPTION_EXECUTE_HANDLER) {
-        // Handle access violation
+    // MinGW does not natively support MSVC's __try/__except SEH.
+    // In a real mod, you'd want IsBadReadPtr checks or ReadProcessMemory if doing it externally.
+    // Internally, a direct dereference works but can crash the game if the address is invalid.
+    try {
+        if (!IsBadReadPtr(reinterpret_cast<const void*>(address), sizeof(T))) {
+            value = *reinterpret_cast<T*>(address);
+        }
+    } catch (...) {
+        // Fallback for C++ exceptions, though access violations are hardware exceptions
     }
 #endif
     return value;
@@ -34,12 +36,15 @@ T ReadMemory(uintptr_t address) {
 template <typename T>
 bool WriteMemory(uintptr_t address, T value) {
 #ifdef _WIN32
-    __try {
-        *reinterpret_cast<T*>(address) = value;
-        return true;
-    } __except (EXCEPTION_EXECUTE_HANDLER) {
-        return false;
+    try {
+        if (!IsBadWritePtr(reinterpret_cast<void*>(address), sizeof(T))) {
+            *reinterpret_cast<T*>(address) = value;
+            return true;
+        }
+    } catch (...) {
+        // Fallback for C++ exceptions
     }
+    return false;
 #else
     return false;
 #endif

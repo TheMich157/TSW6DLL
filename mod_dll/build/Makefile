@@ -129,13 +129,13 @@ TSW6_Dispatcher/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSW6_Dispatcher.dir/build.make CMakeFiles/TSW6_Dispatcher.dir/build
 .PHONY : TSW6_Dispatcher/fast
 
-src/Server.o: src/Server.cpp.o
-.PHONY : src/Server.o
+src/Server.obj: src/Server.cpp.obj
+.PHONY : src/Server.obj
 
 # target to build an object file
-src/Server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSW6_Dispatcher.dir/build.make CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o
-.PHONY : src/Server.cpp.o
+src/Server.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSW6_Dispatcher.dir/build.make CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj
+.PHONY : src/Server.cpp.obj
 
 src/Server.i: src/Server.cpp.i
 .PHONY : src/Server.i
@@ -153,13 +153,13 @@ src/Server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSW6_Dispatcher.dir/build.make CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.s
 .PHONY : src/Server.cpp.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSW6_Dispatcher.dir/build.make CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSW6_Dispatcher.dir/build.make CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
 .PHONY : src/main.i
@@ -186,10 +186,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... TSW6_Dispatcher"
-	@echo "... src/Server.o"
+	@echo "... src/Server.obj"
 	@echo "... src/Server.i"
 	@echo "... src/Server.s"
-	@echo "... src/main.o"
+	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 .PHONY : help

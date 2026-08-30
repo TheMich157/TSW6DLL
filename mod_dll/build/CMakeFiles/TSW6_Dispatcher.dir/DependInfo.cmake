@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/michal/TSW6/mod_dll/src/Server.cpp" "CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o" "gcc" "CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o.d"
-  "/Users/michal/TSW6/mod_dll/src/main.cpp" "CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o" "gcc" "CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o.d"
+  "/Users/michal/TSW6/mod_dll/src/Server.cpp" "CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj" "gcc" "CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj.d"
+  "/Users/michal/TSW6/mod_dll/src/main.cpp" "CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj" "gcc" "CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

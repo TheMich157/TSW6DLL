@@ -68,10 +68,11 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineSystem.cmake:218 (message)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineSystem.cmake:213 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Darwin - 27.0.0 - arm64
+      The target system is: Windows -  - 
+      The host system is: Darwin - 27.0.0 - arm64
   -
     kind: "find-v1"
     backtrace:
@@ -158,12 +159,12 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake:67 (_cmake_find_compiler_path)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_C_COMPILER"
-    description: "C compiler"
+    variable: "CMAKE_C_COMPILER_WITH_PATH"
+    description: "Path to a program."
     settings:
       SearchFramework: "FIRST"
       SearchAppBundle: "FIRST"
@@ -173,13 +174,7 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "cc"
-      - "gcc"
-      - "cl"
-      - "bcc"
-      - "xlc"
-      - "icx"
-      - "clang"
+      - "x86_64-w64-mingw32-gcc"
     candidate_directories:
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
@@ -199,14 +194,9 @@ events:
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
     searched_directories:
-      - "/Users/michal/.gemini/antigravity-ide/bin/cc"
-      - "/Users/michal/.local/bin/cc"
-      - "/opt/homebrew/bin/cc"
-      - "/opt/homebrew/sbin/cc"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/cc"
-      - "/usr/local/bin/cc"
-      - "/System/Cryptexes/App/usr/bin/cc"
-    found: "/usr/bin/cc"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-gcc"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -279,7 +269,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/cc 
+      Compiler: /opt/homebrew/bin/x86_64-w64-mingw32-gcc 
       Build flags: 
       Id flags:  
       
@@ -287,52 +277,11 @@ events:
       0
       
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
       
-      The C compiler identification is AppleClang, found in:
-        /Users/michal/TSW6/mod_dll/build/CMakeFiles/4.4.2/CompilerIdC/a.out
+      The C compiler identification is GNU, found in:
+        /Users/michal/TSW6/mod_dll/build/CMakeFiles/4.4.2/CompilerIdC/a.exe
       
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:323 (message)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Detecting C compiler apple sysroot: "/usr/bin/cc" "-E" "apple-sdk.c"
-        # 1 "apple-sdk.c"
-        # 1 "<built-in>" 1
-        # 1 "<built-in>" 3
-        # 484 "<built-in>" 3
-        # 1 "<command line>" 1
-        # 1 "<built-in>" 2
-        # 1 "apple-sdk.c" 2
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 1 3 4
-        # 89 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
-        # 90 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h" 1 3 4
-        # 91 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 207 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-        # 196 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
-        # 197 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
-        # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
-        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 2 3 4
-        # 198 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 1 3 4
-        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
-        # 35 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 2 3 4
-        # 199 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
-        # 208 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 2 "apple-sdk.c" 2
-        
-        
-      Found apple sysroot: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
   -
     kind: "find-v1"
     backtrace:
@@ -351,16 +300,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-ar"
       - "ar"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -370,7 +320,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    found: "/usr/bin/ar"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-ar"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -408,16 +358,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-ranlib"
       - "ranlib"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -427,7 +378,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    found: "/usr/bin/ranlib"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-ranlib"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -465,16 +416,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-strip"
       - "strip"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -484,7 +436,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    found: "/usr/bin/strip"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-strip"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -522,16 +474,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-ld"
       - "ld"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -541,7 +494,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    found: "/usr/bin/ld"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-ld"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -579,16 +532,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-nm"
       - "nm"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -598,7 +552,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    found: "/usr/bin/nm"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-nm"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -636,16 +590,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-objdump"
       - "objdump"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -655,7 +610,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    found: "/usr/bin/objdump"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-objdump"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -693,16 +648,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-objcopy"
       - "objcopy"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -712,25 +668,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    searched_directories:
-      - "/usr/bin/objcopy"
-      - "/Users/michal/.gemini/antigravity-ide/bin/objcopy"
-      - "/Users/michal/.local/bin/objcopy"
-      - "/opt/homebrew/bin/objcopy"
-      - "/opt/homebrew/sbin/objcopy"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/objcopy"
-      - "/usr/local/bin/objcopy"
-      - "/System/Cryptexes/App/usr/bin/objcopy"
-      - "/bin/objcopy"
-      - "/usr/sbin/objcopy"
-      - "/sbin/objcopy"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/objcopy"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/objcopy"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/objcopy"
-      - "/pkg/env/global/bin/objcopy"
-      - "/Library/Apple/usr/bin/objcopy"
-      - "/Users/michal/.lmstudio/bin/objcopy"
-    found: false
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-objcopy"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -768,16 +706,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-readelf"
       - "readelf"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -787,25 +726,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    searched_directories:
-      - "/usr/bin/readelf"
-      - "/Users/michal/.gemini/antigravity-ide/bin/readelf"
-      - "/Users/michal/.local/bin/readelf"
-      - "/opt/homebrew/bin/readelf"
-      - "/opt/homebrew/sbin/readelf"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/readelf"
-      - "/usr/local/bin/readelf"
-      - "/System/Cryptexes/App/usr/bin/readelf"
-      - "/bin/readelf"
-      - "/usr/sbin/readelf"
-      - "/sbin/readelf"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/readelf"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/readelf"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/readelf"
-      - "/pkg/env/global/bin/readelf"
-      - "/Library/Apple/usr/bin/readelf"
-      - "/Users/michal/.lmstudio/bin/readelf"
-    found: false
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-readelf"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -843,16 +764,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-dlltool"
       - "dlltool"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -862,25 +784,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    searched_directories:
-      - "/usr/bin/dlltool"
-      - "/Users/michal/.gemini/antigravity-ide/bin/dlltool"
-      - "/Users/michal/.local/bin/dlltool"
-      - "/opt/homebrew/bin/dlltool"
-      - "/opt/homebrew/sbin/dlltool"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/dlltool"
-      - "/usr/local/bin/dlltool"
-      - "/System/Cryptexes/App/usr/bin/dlltool"
-      - "/bin/dlltool"
-      - "/usr/sbin/dlltool"
-      - "/sbin/dlltool"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/dlltool"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/dlltool"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/dlltool"
-      - "/pkg/env/global/bin/dlltool"
-      - "/Library/Apple/usr/bin/dlltool"
-      - "/Users/michal/.lmstudio/bin/dlltool"
-    found: false
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-dlltool"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -918,16 +822,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-addr2line"
       - "addr2line"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -937,25 +842,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
-    searched_directories:
-      - "/usr/bin/addr2line"
-      - "/Users/michal/.gemini/antigravity-ide/bin/addr2line"
-      - "/Users/michal/.local/bin/addr2line"
-      - "/opt/homebrew/bin/addr2line"
-      - "/opt/homebrew/sbin/addr2line"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/addr2line"
-      - "/usr/local/bin/addr2line"
-      - "/System/Cryptexes/App/usr/bin/addr2line"
-      - "/bin/addr2line"
-      - "/usr/sbin/addr2line"
-      - "/sbin/addr2line"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/addr2line"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/addr2line"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/addr2line"
-      - "/pkg/env/global/bin/addr2line"
-      - "/Library/Apple/usr/bin/addr2line"
-      - "/Users/michal/.lmstudio/bin/addr2line"
-    found: false
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-addr2line"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -993,16 +880,17 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
+      - "x86_64-w64-mingw32-tapi"
       - "tapi"
     candidate_directories:
-      - "/usr/bin/"
+      - "/opt/homebrew/bin/"
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
-      - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
@@ -1013,14 +901,31 @@ events:
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
     searched_directories:
-      - "/usr/bin/tapi"
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-tapi"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-tapi"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-tapi"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-tapi"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-tapi"
+      - "/usr/local/bin/x86_64-w64-mingw32-tapi"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-tapi"
+      - "/usr/bin/x86_64-w64-mingw32-tapi"
+      - "/bin/x86_64-w64-mingw32-tapi"
+      - "/usr/sbin/x86_64-w64-mingw32-tapi"
+      - "/sbin/x86_64-w64-mingw32-tapi"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-tapi"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-tapi"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-tapi"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-tapi"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-tapi"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-tapi"
+      - "/opt/homebrew/bin/tapi"
       - "/Users/michal/.gemini/antigravity-ide/bin/tapi"
       - "/Users/michal/.local/bin/tapi"
-      - "/opt/homebrew/bin/tapi"
       - "/opt/homebrew/sbin/tapi"
       - "/Library/Frameworks/Python.framework/Versions/3.14/bin/tapi"
       - "/usr/local/bin/tapi"
       - "/System/Cryptexes/App/usr/bin/tapi"
+      - "/usr/bin/tapi"
       - "/bin/tapi"
       - "/usr/sbin/tapi"
       - "/sbin/tapi"
@@ -1053,12 +958,236 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_CXX_COMPILER"
-    description: "CXX compiler"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-gcc-ar-16.2"
+      - "x86_64-w64-mingw32-gcc-ar-16"
+      - "x86_64-w64-mingw32-gcc-ar16"
+      - "x86_64-w64-mingw32-gcc-ar"
+    candidate_directories:
+      - "/opt/homebrew/bin/"
+      - "/Users/michal/.gemini/antigravity-ide/bin/"
+      - "/Users/michal/.local/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/pkg/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
+      - "/Users/michal/.lmstudio/bin/"
+    searched_directories:
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/sbin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/sbin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ar16"
+      - "/sbin/x86_64-w64-mingw32-gcc-ar16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ar16"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/Users/michal/.gemini/antigravity-ide/bin"
+        - "/Users/michal/.local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.14/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/pkg/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/michal/.lmstudio/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "x86_64-w64-mingw32-gcc-ranlib-16"
+      - "x86_64-w64-mingw32-gcc-ranlib16"
+      - "x86_64-w64-mingw32-gcc-ranlib"
+    candidate_directories:
+      - "/opt/homebrew/bin/"
+      - "/Users/michal/.gemini/antigravity-ide/bin/"
+      - "/Users/michal/.local/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/pkg/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
+      - "/Users/michal/.lmstudio/bin/"
+    searched_directories:
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/sbin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/sbin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/sbin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ranlib16"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/Users/michal/.gemini/antigravity-ide/bin"
+        - "/Users/michal/.local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.14/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/pkg/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/michal/.lmstudio/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:71 (_cmake_find_compiler_path)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_WITH_PATH"
+    description: "Path to a program."
     settings:
       SearchFramework: "FIRST"
       SearchAppBundle: "FIRST"
@@ -1068,16 +1197,29 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "c++"
-      - "g++"
-      - "cl"
-      - "bcc"
-      - "icpx"
-      - "icx"
-      - "clang++"
+      - "x86_64-w64-mingw32-g++"
     candidate_directories:
+      - "/Users/michal/.gemini/antigravity-ide/bin/"
+      - "/Users/michal/.local/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
-    found: "/usr/bin/c++"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/pkg/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
+      - "/Users/michal/.lmstudio/bin/"
+    searched_directories:
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-g++"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-g++"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-g++"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -1150,7 +1292,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /usr/bin/c++ 
+      Compiler: /opt/homebrew/bin/x86_64-w64-mingw32-g++ 
       Build flags: 
       Id flags:  
       
@@ -1158,61 +1300,246 @@ events:
       0
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
       
-      The CXX compiler identification is AppleClang, found in:
-        /Users/michal/TSW6/mod_dll/build/CMakeFiles/4.4.2/CompilerIdCXX/a.out
+      The CXX compiler identification is GNU, found in:
+        /Users/michal/TSW6/mod_dll/build/CMakeFiles/4.4.2/CompilerIdCXX/a.exe
       
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:323 (message)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Detecting CXX compiler apple sysroot: "/usr/bin/c++" "-E" "apple-sdk.cpp"
-        # 1 "apple-sdk.cpp"
-        # 1 "<built-in>" 1
-        # 1 "<built-in>" 3
-        # 533 "<built-in>" 3
-        # 1 "<command line>" 1
-        # 1 "<built-in>" 2
-        # 1 "apple-sdk.cpp" 2
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 1 3 4
-        # 89 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
-        # 90 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h" 1 3 4
-        # 91 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 207 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
-        # 196 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
-        # 197 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
-        # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
-        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 2 3 4
-        # 198 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 1 3 4
-        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 3 4
-        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
-        # 35 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 2 3 4
-        # 199 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
-        # 208 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
-        # 2 "apple-sdk.cpp" 2
-        
-        
-      Found apple sysroot: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
   -
     kind: "find-v1"
     backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Darwin.cmake:66 (find_program)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
-    variable: "CMAKE_INSTALL_NAME_TOOL"
-    description: "Path to a program."
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-gcc-ar-16.2"
+      - "x86_64-w64-mingw32-gcc-ar-16"
+      - "x86_64-w64-mingw32-gcc-ar16"
+      - "x86_64-w64-mingw32-gcc-ar"
+    candidate_directories:
+      - "/opt/homebrew/bin/"
+      - "/Users/michal/.gemini/antigravity-ide/bin/"
+      - "/Users/michal/.local/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/pkg/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
+      - "/Users/michal/.lmstudio/bin/"
+    searched_directories:
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/sbin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ar-16.2"
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/sbin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ar-16"
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ar16"
+      - "/sbin/x86_64-w64-mingw32-gcc-ar16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ar16"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ar16"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/Users/michal/.gemini/antigravity-ide/bin"
+        - "/Users/michal/.local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.14/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/pkg/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/michal/.lmstudio/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "x86_64-w64-mingw32-gcc-ranlib-16"
+      - "x86_64-w64-mingw32-gcc-ranlib16"
+      - "x86_64-w64-mingw32-gcc-ranlib"
+    candidate_directories:
+      - "/opt/homebrew/bin/"
+      - "/Users/michal/.gemini/antigravity-ide/bin/"
+      - "/Users/michal/.local/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/pkg/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
+      - "/Users/michal/.lmstudio/bin/"
+    searched_directories:
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/sbin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ranlib-16.2"
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/sbin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ranlib-16"
+      - "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/opt/homebrew/sbin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/System/Cryptexes/App/usr/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/usr/sbin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/sbin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/pkg/env/global/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Library/Apple/usr/bin/x86_64-w64-mingw32-gcc-ranlib16"
+      - "/Users/michal/.lmstudio/bin/x86_64-w64-mingw32-gcc-ranlib16"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/Users/michal/.gemini/antigravity-ide/bin"
+        - "/Users/michal/.local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.14/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/pkg/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/michal/.lmstudio/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Windows-GNU.cmake:167 (enable_language)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/Platform/Windows-GNU-C.cmake:2 (__windows_compiler_gnu)"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCInformation.cmake:48 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
     settings:
       SearchFramework: "FIRST"
       SearchAppBundle: "FIRST"
@@ -1222,7 +1549,8 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "install_name_tool"
+      - "x86_64-w64-mingw32-windres"
+      - "windres"
     candidate_directories:
       - "/Users/michal/.gemini/antigravity-ide/bin/"
       - "/Users/michal/.local/bin/"
@@ -1241,15 +1569,18 @@ events:
       - "/pkg/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/michal/.lmstudio/bin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/bin/"
+      - "/sbin/"
     searched_directories:
-      - "/Users/michal/.gemini/antigravity-ide/bin/install_name_tool"
-      - "/Users/michal/.local/bin/install_name_tool"
-      - "/opt/homebrew/bin/install_name_tool"
-      - "/opt/homebrew/sbin/install_name_tool"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/bin/install_name_tool"
-      - "/usr/local/bin/install_name_tool"
-      - "/System/Cryptexes/App/usr/bin/install_name_tool"
-    found: "/usr/bin/install_name_tool"
+      - "/Users/michal/.gemini/antigravity-ide/bin/x86_64-w64-mingw32-windres"
+      - "/Users/michal/.local/bin/x86_64-w64-mingw32-windres"
+    found: "/opt/homebrew/bin/x86_64-w64-mingw32-windres"
     search_context:
       ENV{PATH}:
         - "/Users/michal/.gemini/antigravity-ide/bin"
@@ -1270,6 +1601,10 @@ events:
         - "/Library/Apple/usr/bin"
         - "/Users/michal/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data"
+        - "/usr/local"
+        - "/"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1279,74 +1614,74 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-qufdIV"
-      binary: "/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-qufdIV"
+      source: "/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-5Y1JMz"
+      binary: "/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-5Y1JMz"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: ""
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: false
       stdout: |
-        Change Dir: '/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-qufdIV'
+        Change Dir: '/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-5Y1JMz'
         
-        Run Build Command(s): /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1e8a3/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1e8a3.dir/build.make CMakeFiles/cmTC_1e8a3.dir/build
-        Building C object CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCCompilerABI.c
-        Apple clang version 21.0.0 (clang-2100.3.33.1)
-        Target: arm64-apple-darwin27.0.0
+        Run Build Command(s): /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_22745/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_22745.dir/build.make CMakeFiles/cmTC_22745.dir/build
+        Building C object CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj
+        /opt/homebrew/bin/x86_64-w64-mingw32-gcc   -v -o CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj -c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/x86_64-w64-mingw32-gcc
+        Target: x86_64-w64-mingw32
+        Configured with: ../configure --target=x86_64-w64-mingw32 --with-sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --prefix=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --enable-languages=c,c++,objc,obj-c++,fortran --with-ld=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld --with-as=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-system-zlib --with-zstd --disable-multilib --disable-nls --enable-threads=posix
         Thread model: posix
-        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-        clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx27.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-qufdIV -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-qufdIV -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -x c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCCompilerABI.c
-        clang -cc1 version 21.0.0 (clang-2100.3.33.1) default target arm64-apple-darwin27.0.0
-        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
-        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_22745.dir/'
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/cc1 -quiet -v -D_REENTRANT /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_22745.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//cc5zng3W.s
+        GNU C23 (GCC) version 16.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version Apple LLVM 21.0.0 (clang-2100.1.1.101), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.28-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/usr/local/include"
+        ignoring duplicate directory "/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         /usr/local/include
-         /Library/Developer/CommandLineTools/usr/lib/clang/21/include
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
-         /Library/Developer/CommandLineTools/usr/include
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
-        Linking C executable cmTC_1e8a3
-        /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e8a3.dir/link.txt --verbose=1
-        Apple clang version 21.0.0 (clang-2100.3.33.1)
-        Target: arm64-apple-darwin27.0.0
+        Compiler executable checksum: 3753f8088dc10a589236a34ad7624934
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_22745.dir/'
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as -v -o CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj /var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//cc5zng3W.s
+        GNU assembler version 2.47 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.47.20260726
+        COMPILER_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_22745.exe
+        /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22745.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/x86_64-w64-mingw32-gcc
+        COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper
+        Target: x86_64-w64-mingw32
+        Configured with: ../configure --target=x86_64-w64-mingw32 --with-sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --prefix=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --enable-languages=c,c++,objc,obj-c++,fortran --with-ld=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld --with-as=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-system-zlib --with-zstd --disable-multilib --disable-nls --enable-threads=posix
         Thread model: posix
-        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 27.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_1e8a3 -L/usr/local/lib -v CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a
-        @(#)PROGRAM:ld PROJECT:ld-27037.1
-        BUILD 04:20:28 Aug 13 2026
-        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-        LTO support using: LLVM version 21.0.0 (static support for 30, runtime is 30)
-        TAPI support using: Apple TAPI version 21.0.0 (tapi-2100.3.8.1)
-        Library search paths:
-        	/usr/local/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
-        Framework search paths:
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/cc  -arch arm64  -v -Wl,-v CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -o cmTC_1e8a3
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.2.0 (GCC) 
+        COMPILER_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_22745.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_22745.'
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/collect2 -plugin /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccOYpP40.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 -m i386pep -Bdynamic -o cmTC_22745.exe /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0 -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib -v --whole-archive CMakeFiles/cmTC_22745.dir/objects.a --no-whole-archive --out-implib libcmTC_22745.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o
+        collect2 version 16.2.0
+        /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld -plugin /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccOYpP40.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 -m i386pep -Bdynamic -o cmTC_22745.exe /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0 -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib -v --whole-archive CMakeFiles/cmTC_22745.dir/objects.a --no-whole-archive --out-implib libcmTC_22745.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o
+        GNU ld (GNU Binutils) 2.47.20260726
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_22745.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_22745.'
+        /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E rm -f CMakeFiles/cmTC_22745.dir/objects.a
+        /opt/homebrew/bin/x86_64-w64-mingw32-ar qc CMakeFiles/cmTC_22745.dir/objects.a @CMakeFiles/cmTC_22745.dir/objects1.rsp
+        /opt/homebrew/bin/x86_64-w64-mingw32-gcc  -v -Wl,-v -Wl,--whole-archive CMakeFiles/cmTC_22745.dir/objects.a -Wl,--no-whole-archive -o cmTC_22745.exe -Wl,--out-implib,libcmTC_22745.dll.a -Wl,--major-image-version,0,--minor-image-version,0
         
       exitCode: 0
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:160 (message)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Effective list of requested architectures (possibly empty)  : ""
-      Effective list of architectures found in the ABI info binary: "arm64"
   -
     kind: "message-v1"
     backtrace:
@@ -1357,16 +1692,14 @@ events:
       Parsed C implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [/usr/local/include]
-          add: [/Library/Developer/CommandLineTools/usr/lib/clang/21/include]
-          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
-          add: [/Library/Developer/CommandLineTools/usr/include]
+          add: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include]
+          add: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed]
+          add: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include]
         end of search list found
-        collapse include dir [/usr/local/include] ==> [/usr/local/include]
-        collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/21/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/21/include]
-        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
-        collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
-        implicit include dirs: [/usr/local/include;/Library/Developer/CommandLineTools/usr/lib/clang/21/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
+        collapse include dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include]
+        collapse include dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed]
+        collapse include dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include]
+        implicit include dirs: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include]
       
       
   -
@@ -1377,92 +1710,144 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-qufdIV']
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild))("|,| |$)]
+        ignore line: [Change Dir: '/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-5Y1JMz']
         ignore line: []
-        ignore line: [Run Build Command(s): /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1e8a3/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1e8a3.dir/build.make CMakeFiles/cmTC_1e8a3.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCCompilerABI.c]
-        ignore line: [Apple clang version 21.0.0 (clang-2100.3.33.1)]
-        ignore line: [Target: arm64-apple-darwin27.0.0]
+        ignore line: [Run Build Command(s): /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_22745/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_22745.dir/build.make CMakeFiles/cmTC_22745.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/opt/homebrew/bin/x86_64-w64-mingw32-gcc   -v -o CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj -c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/x86_64-w64-mingw32-gcc]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../configure --target=x86_64-w64-mingw32 --with-sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --prefix=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --enable-languages=c,c++,objc,obj-c++,fortran --with-ld=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld --with-as=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-system-zlib --with-zstd --disable-multilib --disable-nls --enable-threads=posix]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx27.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-qufdIV -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-qufdIV -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -x c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCCompilerABI.c]
-        ignore line: [clang -cc1 version 21.0.0 (clang-2100.3.33.1) default target arm64-apple-darwin27.0.0]
-        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
-        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_22745.dir/']
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/cc1 -quiet -v -D_REENTRANT /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_22745.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//cc5zng3W.s]
+        ignore line: [GNU C23 (GCC) version 16.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version Apple LLVM 21.0.0 (clang-2100.1.1.101)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.28-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ /usr/local/include]
-        ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/21/include]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
-        ignore line: [ /Library/Developer/CommandLineTools/usr/include]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include]
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed]
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_1e8a3]
-        ignore line: [/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e8a3.dir/link.txt --verbose=1]
-        ignore line: [Apple clang version 21.0.0 (clang-2100.3.33.1)]
-        ignore line: [Target: arm64-apple-darwin27.0.0]
+        ignore line: [Compiler executable checksum: 3753f8088dc10a589236a34ad7624934]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_22745.dir/']
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as -v -o CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj /var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//cc5zng3W.s]
+        ignore line: [GNU assembler version 2.47 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.47.20260726]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_22745.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_22745.exe]
+        ignore line: [/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22745.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/x86_64-w64-mingw32-gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../configure --target=x86_64-w64-mingw32 --with-sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --prefix=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --enable-languages=c,c++,objc,obj-c++,fortran --with-ld=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld --with-as=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-system-zlib --with-zstd --disable-multilib --disable-nls --enable-threads=posix]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 27.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_1e8a3 -L/usr/local/lib -v CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> linker [/Library/Developer/CommandLineTools/usr/bin/ld]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 27.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_1e8a3 -L/usr/local/lib -v CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-          arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
-          arg [-demangle] ==> ignore
-          arg [-lto_library] ==> ignore, skip following value
-          arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
-          arg [-dynamic] ==> ignore
-          arg [-arch] ==> ignore
-          arg [arm64] ==> ignore
-          arg [-platform_version] ==> ignore
-          arg [macos] ==> ignore
-          arg [27.0.0] ==> ignore
-          arg [27.0] ==> ignore
-          arg [-syslibroot] ==> ignore
-          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
-          arg [-mllvm] ==> ignore
-          arg [-enable-linkonceodr-outlining] ==> ignore
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_22745.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_22745.']
+        link line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/collect2 -plugin /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccOYpP40.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 -m i386pep -Bdynamic -o cmTC_22745.exe /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0 -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib -v --whole-archive CMakeFiles/cmTC_22745.dir/objects.a --no-whole-archive --out-implib libcmTC_22745.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o]
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccOYpP40.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [--sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_1e8a3] ==> ignore
-          arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
+          arg [cmTC_22745.exe] ==> ignore
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o] ==> obj [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_1e8a3.dir/CMakeCCompilerABI.c.o] ==> ignore
-          arg [-lSystem] ==> lib [System]
-          arg [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-        linker tool for 'C': /Library/Developer/CommandLineTools/usr/bin/ld 
-        Library search paths: [;/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
-        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
-        remove lib [System]
-        remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
-        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
-        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
-        implicit libs: []
-        implicit objs: []
-        implicit dirs: [/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
-        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles/cmTC_22745.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_22745.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o] ==> obj [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o]
+        ignore line: [collect2 version 16.2.0]
+        ignore line: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld -plugin /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccOYpP40.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 -m i386pep -Bdynamic -o cmTC_22745.exe /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0 -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib -v --whole-archive CMakeFiles/cmTC_22745.dir/objects.a --no-whole-archive --out-implib libcmTC_22745.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o]
+        ignore line: [GNU ld (GNU Binutils) 2.47.20260726]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_22745.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_22745.']
+        ignore line: [/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E rm -f CMakeFiles/cmTC_22745.dir/objects.a]
+        ignore line: [/opt/homebrew/bin/x86_64-w64-mingw32-ar qc CMakeFiles/cmTC_22745.dir/objects.a @CMakeFiles/cmTC_22745.dir/objects1.rsp]
+        ignore line: [/opt/homebrew/bin/x86_64-w64-mingw32-gcc  -v -Wl -v -Wl --whole-archive CMakeFiles/cmTC_22745.dir/objects.a -Wl --no-whole-archive -o cmTC_22745.exe -Wl --out-implib libcmTC_22745.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: []
+        ignore line: []
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        collapse obj [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib/crt2.o]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib]
+        implicit libs: [mingw32;gcc;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;mingwex;kernel32]
+        implicit objs: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib/crt2.o;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o]
+        implicit dirs: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib]
+        implicit fwks: []
       
       
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Running the C compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
-      @(#)PROGRAM:ld PROJECT:ld-27037.1
-      BUILD 04:20:28 Aug 13 2026
-      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-      LTO support using: LLVM version 21.0.0 (static support for 30, runtime is 30)
-      TAPI support using: Apple TAPI version 21.0.0 (tapi-2100.3.8.1)
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1472,77 +1857,78 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-1BsrU6"
-      binary: "/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-1BsrU6"
+      source: "/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-wF6dOo"
+      binary: "/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-wF6dOo"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: ""
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: false
       stdout: |
-        Change Dir: '/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-1BsrU6'
+        Change Dir: '/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-wF6dOo'
         
-        Run Build Command(s): /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bee97/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_bee97.dir/build.make CMakeFiles/cmTC_bee97.dir/build
-        Building CXX object CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp
-        Apple clang version 21.0.0 (clang-2100.3.33.1)
-        Target: arm64-apple-darwin27.0.0
+        Run Build Command(s): /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ef423/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ef423.dir/build.make CMakeFiles/cmTC_ef423.dir/build
+        Building CXX object CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj
+        /opt/homebrew/bin/x86_64-w64-mingw32-g++   -v -o CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj -c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/x86_64-w64-mingw32-g++
+        Target: x86_64-w64-mingw32
+        Configured with: ../configure --target=x86_64-w64-mingw32 --with-sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --prefix=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --enable-languages=c,c++,objc,obj-c++,fortran --with-ld=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld --with-as=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-system-zlib --with-zstd --disable-multilib --disable-nls --enable-threads=posix
         Thread model: posix
-        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-        clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-        ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx27.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-1BsrU6 -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-1BsrU6 -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp
-        clang -cc1 version 21.0.0 (clang-2100.3.33.1) default target arm64-apple-darwin27.0.0
-        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
-        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ef423.dir/'
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/cc1plus -quiet -v -D_REENTRANT /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ef423.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccVjMcTI.s
+        GNU C++20 (GCC) version 16.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version Apple LLVM 21.0.0 (clang-2100.1.1.101), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.28-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/usr/local/include"
+        ignoring duplicate directory "/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         /usr/local/include
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
-         /Library/Developer/CommandLineTools/usr/lib/clang/21/include
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
-         /Library/Developer/CommandLineTools/usr/include
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
-         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0/x86_64-w64-mingw32
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0/backward
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
-        Linking CXX executable cmTC_bee97
-        /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bee97.dir/link.txt --verbose=1
-        Apple clang version 21.0.0 (clang-2100.3.33.1)
-        Target: arm64-apple-darwin27.0.0
+        Compiler executable checksum: e173333a33c52e601ed33720813f6e5c
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ef423.dir/'
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as -v -o CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccVjMcTI.s
+        GNU assembler version 2.47 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.47.20260726
+        COMPILER_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_ef423.exe
+        /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef423.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/opt/homebrew/bin/x86_64-w64-mingw32-g++
+        COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper
+        Target: x86_64-w64-mingw32
+        Configured with: ../configure --target=x86_64-w64-mingw32 --with-sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --prefix=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --enable-languages=c,c++,objc,obj-c++,fortran --with-ld=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld --with-as=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-system-zlib --with-zstd --disable-multilib --disable-nls --enable-threads=posix
         Thread model: posix
-        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 27.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_bee97 -L/usr/local/lib -v CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a
-        @(#)PROGRAM:ld PROJECT:ld-27037.1
-        BUILD 04:20:28 Aug 13 2026
-        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-        LTO support using: LLVM version 21.0.0 (static support for 30, runtime is 30)
-        TAPI support using: Apple TAPI version 21.0.0 (tapi-2100.3.8.1)
-        Library search paths:
-        	/usr/local/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
-        Framework search paths:
-        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/c++  -arch arm64  -v -Wl,-v CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bee97
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.2.0 (GCC) 
+        COMPILER_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ef423.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ef423.'
+         /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/collect2 -plugin /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccm8vj7n.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 -m i386pep -Bdynamic -o cmTC_ef423.exe /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0 -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib -v --whole-archive CMakeFiles/cmTC_ef423.dir/objects.a --no-whole-archive --out-implib libcmTC_ef423.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o
+        collect2 version 16.2.0
+        /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld -plugin /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccm8vj7n.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 -m i386pep -Bdynamic -o cmTC_ef423.exe /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0 -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib -v --whole-archive CMakeFiles/cmTC_ef423.dir/objects.a --no-whole-archive --out-implib libcmTC_ef423.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o
+        GNU ld (GNU Binutils) 2.47.20260726
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ef423.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ef423.'
+        /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E rm -f CMakeFiles/cmTC_ef423.dir/objects.a
+        /opt/homebrew/bin/x86_64-w64-mingw32-ar qc CMakeFiles/cmTC_ef423.dir/objects.a @CMakeFiles/cmTC_ef423.dir/objects1.rsp
+        /opt/homebrew/bin/x86_64-w64-mingw32-g++  -v -Wl,-v -Wl,--whole-archive CMakeFiles/cmTC_ef423.dir/objects.a -Wl,--no-whole-archive -o cmTC_ef423.exe -Wl,--out-implib,libcmTC_ef423.dll.a -Wl,--major-image-version,0,--minor-image-version,0
         
       exitCode: 0
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:160 (message)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Effective list of requested architectures (possibly empty)  : ""
-      Effective list of architectures found in the ABI info binary: "arm64"
   -
     kind: "message-v1"
     backtrace:
@@ -1553,18 +1939,20 @@ events:
       Parsed CXX implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [/usr/local/include]
-          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1]
-          add: [/Library/Developer/CommandLineTools/usr/lib/clang/21/include]
-          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
-          add: [/Library/Developer/CommandLineTools/usr/include]
+          add: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0]
+          add: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0/x86_64-w64-mingw32]
+          add: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0/backward]
+          add: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include]
+          add: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed]
+          add: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include]
         end of search list found
-        collapse include dir [/usr/local/include] ==> [/usr/local/include]
-        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1]
-        collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/21/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/21/include]
-        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
-        collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
-        implicit include dirs: [/usr/local/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1;/Library/Developer/CommandLineTools/usr/lib/clang/21/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
+        collapse include dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include/c++/16.2.0]
+        collapse include dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0/x86_64-w64-mingw32] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include/c++/16.2.0/x86_64-w64-mingw32]
+        collapse include dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0/backward] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include/c++/16.2.0/backward]
+        collapse include dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include]
+        collapse include dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed]
+        collapse include dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include]
+        implicit include dirs: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include/c++/16.2.0;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include/c++/16.2.0/x86_64-w64-mingw32;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include/c++/16.2.0/backward;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/include]
       
       
   -
@@ -1575,93 +1963,144 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-1BsrU6']
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild))("|,| |$)]
+        ignore line: [Change Dir: '/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-wF6dOo']
         ignore line: []
-        ignore line: [Run Build Command(s): /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bee97/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_bee97.dir/build.make CMakeFiles/cmTC_bee97.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [Apple clang version 21.0.0 (clang-2100.3.33.1)]
-        ignore line: [Target: arm64-apple-darwin27.0.0]
+        ignore line: [Run Build Command(s): /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ef423/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ef423.dir/build.make CMakeFiles/cmTC_ef423.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/opt/homebrew/bin/x86_64-w64-mingw32-g++   -v -o CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj -c /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/x86_64-w64-mingw32-g++]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../configure --target=x86_64-w64-mingw32 --with-sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --prefix=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --enable-languages=c,c++,objc,obj-c++,fortran --with-ld=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld --with-as=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-system-zlib --with-zstd --disable-multilib --disable-nls --enable-threads=posix]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx27.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=27.0 -fdepfile-entry=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/SDKSettings.json -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-1BsrU6 -target-linker-version 1166.2 -v -fcoverage-compilation-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles/CMakeScratch/TryCompile-1BsrU6 -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [clang -cc1 version 21.0.0 (clang-2100.3.33.1) default target arm64-apple-darwin27.0.0]
-        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
-        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ef423.dir/']
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/cc1plus -quiet -v -D_REENTRANT /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ef423.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccVjMcTI.s]
+        ignore line: [GNU C++20 (GCC) version 16.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version Apple LLVM 21.0.0 (clang-2100.1.1.101)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.28-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ /usr/local/include]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1]
-        ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/21/include]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
-        ignore line: [ /Library/Developer/CommandLineTools/usr/include]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
-        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0]
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0/x86_64-w64-mingw32]
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include/c++/16.2.0/backward]
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include]
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/include-fixed]
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_bee97]
-        ignore line: [/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bee97.dir/link.txt --verbose=1]
-        ignore line: [Apple clang version 21.0.0 (clang-2100.3.33.1)]
-        ignore line: [Target: arm64-apple-darwin27.0.0]
+        ignore line: [Compiler executable checksum: e173333a33c52e601ed33720813f6e5c]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ef423.dir/']
+        ignore line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as -v -o CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccVjMcTI.s]
+        ignore line: [GNU assembler version 2.47 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.47.20260726]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ef423.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_ef423.exe]
+        ignore line: [/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef423.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/homebrew/bin/x86_64-w64-mingw32-g++]
+        ignore line: [COLLECT_LTO_WRAPPER=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../configure --target=x86_64-w64-mingw32 --with-sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --prefix=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 --with-bugurl=https://github.com/Homebrew/homebrew-core/issues --enable-languages=c,c++,objc,obj-c++,fortran --with-ld=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld --with-as=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-as --with-gmp=/opt/homebrew/opt/gmp --with-mpfr=/opt/homebrew/opt/mpfr --with-mpc=/opt/homebrew/opt/libmpc --with-isl=/opt/homebrew/opt/isl --with-system-zlib --with-zstd --disable-multilib --disable-nls --enable-threads=posix]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 27.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_bee97 -L/usr/local/lib -v CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> linker [/Library/Developer/CommandLineTools/usr/bin/ld]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 27.0.0 27.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_bee97 -L/usr/local/lib -v CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-          arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
-          arg [-demangle] ==> ignore
-          arg [-lto_library] ==> ignore, skip following value
-          arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
-          arg [-dynamic] ==> ignore
-          arg [-arch] ==> ignore
-          arg [arm64] ==> ignore
-          arg [-platform_version] ==> ignore
-          arg [macos] ==> ignore
-          arg [27.0.0] ==> ignore
-          arg [27.0] ==> ignore
-          arg [-syslibroot] ==> ignore
-          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
-          arg [-mllvm] ==> ignore
-          arg [-enable-linkonceodr-outlining] ==> ignore
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/:/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ef423.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ef423.']
+        link line: [ /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/collect2 -plugin /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccm8vj7n.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 -m i386pep -Bdynamic -o cmTC_ef423.exe /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0 -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib -v --whole-archive CMakeFiles/cmTC_ef423.dir/objects.a --no-whole-archive --out-implib libcmTC_ef423.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o]
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccm8vj7n.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [--sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_bee97] ==> ignore
-          arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
+          arg [cmTC_ef423.exe] ==> ignore
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o] ==> obj [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib] ==> dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_bee97.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-          arg [-lc++] ==> lib [c++]
-          arg [-lSystem] ==> lib [System]
-          arg [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-        linker tool for 'CXX': /Library/Developer/CommandLineTools/usr/bin/ld 
-        Library search paths: [;/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
-        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
-        remove lib [System]
-        remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
-        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
-        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
-        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
-        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
-        implicit libs: [c++]
-        implicit objs: []
-        implicit dirs: [/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
-        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles/cmTC_ef423.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_ef423.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o] ==> obj [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o]
+        ignore line: [collect2 version 16.2.0]
+        ignore line: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/bin/x86_64-w64-mingw32-ld -plugin /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/liblto_plugin.so -plugin-opt=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/libexec/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/bb/mflvvm3j3tj7wvfq33mm3kvh0000gn/T//ccm8vj7n.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64 -m i386pep -Bdynamic -o cmTC_ef423.exe /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0 -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib -L/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib -v --whole-archive CMakeFiles/cmTC_ef423.dir/objects.a --no-whole-archive --out-implib libcmTC_ef423.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 /opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o]
+        ignore line: [GNU ld (GNU Binutils) 2.47.20260726]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ef423.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ef423.']
+        ignore line: [/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E rm -f CMakeFiles/cmTC_ef423.dir/objects.a]
+        ignore line: [/opt/homebrew/bin/x86_64-w64-mingw32-ar qc CMakeFiles/cmTC_ef423.dir/objects.a @CMakeFiles/cmTC_ef423.dir/objects1.rsp]
+        ignore line: [/opt/homebrew/bin/x86_64-w64-mingw32-g++  -v -Wl -v -Wl --whole-archive CMakeFiles/cmTC_ef423.dir/objects.a -Wl --no-whole-archive -o cmTC_ef423.exe -Wl --out-implib libcmTC_ef423.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: []
+        ignore line: []
+        remove lib [msvcrt]
+        remove lib [msvcrt]
+        collapse obj [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib/crt2.o]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib/../lib] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/lib] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib]
+        collapse library dir [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib] ==> [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib]
+        implicit libs: [stdc++;mingw32;gcc_s;gcc;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;mingwex;kernel32]
+        implicit objs: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib/crt2.o;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtbegin.o;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0/crtend.o]
+        implicit dirs: [/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/lib/gcc/x86_64-w64-mingw32/16.2.0;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/x86_64-w64-mingw32/lib;/opt/homebrew/Cellar/mingw-w64/14.0.0_3/toolchain-x86_64/mingw/lib]
+        implicit fwks: []
       
       
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
-      - "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
-    message: |
-      Running the CXX compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
-      @(#)PROGRAM:ld PROJECT:ld-27037.1
-      BUILD 04:20:28 Aug 13 2026
-      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
-      LTO support using: LLVM version 21.0.0 (static support for 30, runtime is 30)
-      TAPI support using: Apple TAPI version 21.0.0 (tapi-2100.3.8.1)
 ...

@@ -72,51 +72,55 @@ include CMakeFiles/TSW6_Dispatcher.dir/flags.make
 CMakeFiles/TSW6_Dispatcher.dir/codegen:
 .PHONY : CMakeFiles/TSW6_Dispatcher.dir/codegen
 
-CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o: CMakeFiles/TSW6_Dispatcher.dir/flags.make
-CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o: /Users/michal/TSW6/mod_dll/src/main.cpp
-CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o: CMakeFiles/TSW6_Dispatcher.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o -MF CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o.d -o CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o -c /Users/michal/TSW6/mod_dll/src/main.cpp
+CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj: CMakeFiles/TSW6_Dispatcher.dir/flags.make
+CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj: CMakeFiles/TSW6_Dispatcher.dir/includes_CXX.rsp
+CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj: /Users/michal/TSW6/mod_dll/src/main.cpp
+CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj: CMakeFiles/TSW6_Dispatcher.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj"
+	/opt/homebrew/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj -MF CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj.d -o CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj -c /Users/michal/TSW6/mod_dll/src/main.cpp
 
 CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michal/TSW6/mod_dll/src/main.cpp > CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.i
+	/opt/homebrew/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michal/TSW6/mod_dll/src/main.cpp > CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.i
 
 CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michal/TSW6/mod_dll/src/main.cpp -o CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.s
+	/opt/homebrew/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michal/TSW6/mod_dll/src/main.cpp -o CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.s
 
-CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o: CMakeFiles/TSW6_Dispatcher.dir/flags.make
-CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o: /Users/michal/TSW6/mod_dll/src/Server.cpp
-CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o: CMakeFiles/TSW6_Dispatcher.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o -MF CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o.d -o CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o -c /Users/michal/TSW6/mod_dll/src/Server.cpp
+CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj: CMakeFiles/TSW6_Dispatcher.dir/flags.make
+CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj: CMakeFiles/TSW6_Dispatcher.dir/includes_CXX.rsp
+CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj: /Users/michal/TSW6/mod_dll/src/Server.cpp
+CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj: CMakeFiles/TSW6_Dispatcher.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj"
+	/opt/homebrew/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj -MF CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj.d -o CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj -c /Users/michal/TSW6/mod_dll/src/Server.cpp
 
 CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michal/TSW6/mod_dll/src/Server.cpp > CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.i
+	/opt/homebrew/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/michal/TSW6/mod_dll/src/Server.cpp > CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.i
 
 CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michal/TSW6/mod_dll/src/Server.cpp -o CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.s
+	/opt/homebrew/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/michal/TSW6/mod_dll/src/Server.cpp -o CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.s
 
 # Object files for target TSW6_Dispatcher
 TSW6_Dispatcher_OBJECTS = \
-"CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o" \
-"CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o"
+"CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj" \
+"CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj"
 
 # External object files for target TSW6_Dispatcher
 TSW6_Dispatcher_EXTERNAL_OBJECTS =
 
-bin/libTSW6_Dispatcher.dylib: CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o
-bin/libTSW6_Dispatcher.dylib: CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o
-bin/libTSW6_Dispatcher.dylib: CMakeFiles/TSW6_Dispatcher.dir/build.make
-bin/libTSW6_Dispatcher.dylib: CMakeFiles/TSW6_Dispatcher.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library bin/libTSW6_Dispatcher.dylib"
+bin/libTSW6_Dispatcher.dll: CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.obj
+bin/libTSW6_Dispatcher.dll: CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.obj
+bin/libTSW6_Dispatcher.dll: CMakeFiles/TSW6_Dispatcher.dir/build.make
+bin/libTSW6_Dispatcher.dll: CMakeFiles/TSW6_Dispatcher.dir/linkLibs.rsp
+bin/libTSW6_Dispatcher.dll: CMakeFiles/TSW6_Dispatcher.dir/objects1.rsp
+bin/libTSW6_Dispatcher.dll: CMakeFiles/TSW6_Dispatcher.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/michal/TSW6/mod_dll/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library bin/libTSW6_Dispatcher.dll"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TSW6_Dispatcher.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/TSW6_Dispatcher.dir/build: bin/libTSW6_Dispatcher.dylib
+CMakeFiles/TSW6_Dispatcher.dir/build: bin/libTSW6_Dispatcher.dll
 .PHONY : CMakeFiles/TSW6_Dispatcher.dir/build
 
 CMakeFiles/TSW6_Dispatcher.dir/clean:

@@ -1,1 +1,3 @@
-/usr/bin/c++  -arch arm64 -dynamiclib -Wl,-headerpad_max_install_names -o bin/libTSW6_Dispatcher.dylib -install_name @rpath/libTSW6_Dispatcher.dylib CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/cmake/data/bin/cmake -E rm -f CMakeFiles/TSW6_Dispatcher.dir/objects.a
+/opt/homebrew/bin/x86_64-w64-mingw32-ar qc CMakeFiles/TSW6_Dispatcher.dir/objects.a @CMakeFiles/TSW6_Dispatcher.dir/objects1.rsp
+/opt/homebrew/bin/x86_64-w64-mingw32-g++  -static-libgcc -static-libstdc++ -static -shared  -Wl,--kill-at -o bin/libTSW6_Dispatcher.dll -Wl,--out-implib,lib/libTSW6_Dispatcher.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles/TSW6_Dispatcher.dir/objects.a -Wl,--no-whole-archive @CMakeFiles/TSW6_Dispatcher.dir/linkLibs.rsp
