@@ -122,7 +122,7 @@ app.post('/api/write', async (req, res) => {
 io.on('connection', (socket) => {
   console.log('Frontend connected:', socket.id);
   // Send immediate state upon connection
-  socket.emit('gameStateUpdate', gameState);
+  socket.emit('memoryUpdate', []);
 
   socket.on('disconnect', () => {
     console.log('Frontend disconnected:', socket.id);
