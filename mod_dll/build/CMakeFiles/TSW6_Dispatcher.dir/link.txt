@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -dynamiclib -Wl,-headerpad_max_install_names -o bin/libTSW6_Dispatcher.dylib -install_name @rpath/libTSW6_Dispatcher.dylib CMakeFiles/TSW6_Dispatcher.dir/src/main.cpp.o CMakeFiles/TSW6_Dispatcher.dir/src/Server.cpp.o
